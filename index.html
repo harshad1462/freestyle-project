@@ -1,1 +1,253 @@
-hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT: Your Clever AI Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(45deg, #007acc, #ff0057);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: gradient-fade 3s infinite;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px #ff0057;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+            text-shadow: 0 0 10px #ffdd57;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background: radial-gradient(circle, #007acc, #000);
+            animation: bg-flash 5s infinite alternate;
+        }
+
+        .hero-text {
+            flex: 1;
+            animation: text-glow 2s infinite alternate;
+        }
+
+        .hero-text h2 {
+            font-size: 2.5rem;
+            color: #ffdd57;
+            text-shadow: 0 0 20px #ffdd57, 0 0 30px #ff0057;
+        }
+
+        .hero-text p {
+            margin: 1rem 0;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            animation: img-bounce 3s infinite;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff0057;
+            color: white;
+            padding: 0.6rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #ffdd57;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .feature-cards {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            width: 30%;
+            transform: rotateY(0deg);
+            transition: transform 0.6s;
+        }
+
+        .card:hover {
+            transform: rotateY(360deg);
+        }
+
+        footer {
+            text-align: center;
+            background: linear-gradient(45deg, #007acc, #ff0057);
+            color: white;
+            padding: 1rem 0;
+        }
+
+        @keyframes gradient-fade {
+            0% { background: linear-gradient(45deg, #007acc, #ff0057); }
+            50% { background: linear-gradient(45deg, #ff0057, #007acc); }
+            100% { background: linear-gradient(45deg, #007acc, #ff0057); }
+        }
+
+        @keyframes bg-flash {
+            0% { background: radial-gradient(circle, #007acc, #000); }
+            50% { background: radial-gradient(circle, #ff0057, #000); }
+            100% { background: radial-gradient(circle, #007acc, #000); }
+        }
+
+        @keyframes text-glow {
+            0% { text-shadow: 0 0 10px #ffdd57; }
+            100% { text-shadow: 0 0 20px #ff0057; }
+        }
+
+        @keyframes img-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const colors = ['#007acc', '#ff0057', '#ffdd57', '#00ff99'];
+            let currentColorIndex = 0;
+            const body = document.body;
+
+            setInterval(() => {
+                body.style.backgroundColor = colors[currentColorIndex];
+                currentColorIndex = (currentColorIndex + 1) % colors.length;
+            }, 3000);
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    card.style.boxShadow = `0 4px 20px ${colors[currentColorIndex]}`;
+                });
+                card.addEventListener('mouseout', () => {
+                    card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">ChatGPT</h1>
+          hello
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Where Conversations Meet Intelligence</h2>
+                <p>ChatGPT is your go-to AI for creative ideas, problem-solving, and endless learning opportunities. Discover the brilliance of seamless interaction.</p>
+                <a href="#features" class="btn">Explore Features</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/500x300" alt="AI Concept">
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>Hello chatGPT</h2>
+            <p>ChatGPT is an advanced conversational AI, designed to help you brainstorm, code, write, and learn like never before. With its powerful language understanding, it adapts to your needs, providing insightful and precise responses every time.</p>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Features</h2>
+            <div class="feature-cards">
+                <div class="card">
+                    <h3>Intelligent Conversations</h3>
+                    <p>Engage in discussions that feel natural and helpful, tailored to your queries.</p>
+                </div>
+                <div class="card">
+                    <h3>Creative Assistance</h3>
+                    <p>Generate ideas, write stories, solve complex problems, and more with ease.</p>
+                </div>
+                <div class="card">
+                    <h3>Technical Expertise</h3>
+                    <p>Get coding help, debug errors, and learn new technologies interactively.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>Have questions or feedback? Reach out to us at <a href="mailto:support@chatgpt.com">support@chatgpt.com</a>.</p>
+        </section>
+    </main>
+
+    <footer
